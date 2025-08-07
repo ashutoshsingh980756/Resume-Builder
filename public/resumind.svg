@@ -1,0 +1,14 @@
+<svg width="200" height="70" viewBox="0 0 200 70" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <!-- Icon: Document with Pencil -->
+    <rect x="10" y="20" width="40" height="50" rx="4" ry="4" fill="none" stroke="#444" stroke-width="2"/>
+    <text x="20" y="40" font-family="Arial, sans-serif" font-size="10" fill="#444">CV</text>
+    <line x1="20" y1="45" x2="40" y2="45" stroke="#444" stroke-width="2"/>
+    <line x1="20" y1="50" x2="38" y2="50" stroke="#444" stroke-width="2"/>
+    <polygon points="35,25 55,45 52,48 32,28" fill="#444"/>
+    <rect x="52" y="48" width="5" height="5" fill="#444" transform="rotate(-45 52 48)"/>
+    
+    <!-- Company Name -->
+    <text x="70" y="55" font-family="Arial, sans-serif" font-size="24" fill="#444">Resumind</text>
+  </g>
+</svg>
