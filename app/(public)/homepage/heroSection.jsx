@@ -32,12 +32,7 @@ const HeroSection = () => {
 
         <div className="w-full md:w-1/2">
           <div className="relative h-96 w-full">
-            <Image
-              src={resume}
-              alt="Hero image"
-              layout="fill"
-              objectFit="contain"
-            />
+            <Image src={resume} alt="Hero image" width={400} height={400} />
           </div>
         </div>
       </div>
