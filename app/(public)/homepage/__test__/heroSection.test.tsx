@@ -12,7 +12,7 @@ describe("Hero section", () => {
     const newCV = screen.getByRole("link", { name: "Create new CV" });
     expect(newCV).toBeInTheDocument();
     expect(newCV).toHaveAttribute("href", "/templates");
-    const improveCV = screen.getByRole("link", { name: "Improve my C" });
+    const improveCV = screen.getByRole("link", { name: "Improve my CV" });
     expect(improveCV).toBeInTheDocument();
   });
 });
