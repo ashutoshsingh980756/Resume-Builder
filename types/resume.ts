@@ -16,6 +16,7 @@ export type Experience = {
   startDate: string;
   endDate: string;
   description: string;
+  role: string;
 };
 
 export type Education = {
@@ -24,4 +25,5 @@ export type Education = {
   startDate: string;
   endDate: string;
   description?: string;
+  school: string;
 };
