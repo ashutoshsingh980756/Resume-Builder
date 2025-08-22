@@ -2,33 +2,61 @@ import { Resume } from "@/types/resume";
 
 export default function ClassicTemplate({ data }: { data: Resume }) {
   return (
-    <div className="p-6 border rounded-lg">
-      <h2 className="text-2xl font-bold">{data.name}</h2>
-      <p>
-        {data.email} | {data.phone}
-      </p>
+    <div className="max-w-3xl mx-auto p-8 border border-gray-300 bg-white text-gray-900 font-serif">
+      <header className="text-center mb-6">
+        <h1 className="text-3xl font-bold">{data.name}</h1>
+        <p className="text-sm">
+          {data.email} | {data.phone} | {data.address}
+        </p>
+      </header>
 
-      <h2 className="mt-4 font-semibold">Experience</h2>
-      <ul>
-        {data.experience.map((exp, i) => (
-          <li key={i}>
-            <strong>{exp.role}</strong> @ {exp.company} ({exp.startDate} -{" "}
-            {exp.endDate})
-          </li>
+      <section className="mb-4">
+        <h2 className="text-xl font-semibold border-b border-gray-400 mb-2">
+          Summary
+        </h2>
+        <p>{data.summary}</p>
+      </section>
+
+      <section className="mb-4">
+        <h2 className="text-xl font-semibold border-b border-gray-400 mb-2">
+          Experience
+        </h2>
+        {data.experience.map((exp, idx) => (
+          <div key={idx} className="mb-3">
+            <h3 className="font-bold">
+              {exp.jobTitle} - {exp.company}
+            </h3>
+            <p className="text-sm italic">
+              {exp.startDate} - {exp.endDate}
+            </p>
+            <p>{exp.description}</p>
+          </div>
         ))}
-      </ul>
+      </section>
 
-      <h2 className="mt-4 font-semibold">Education</h2>
-      <ul>
-        {data.education.map((edu, i) => (
-          <li key={i}>
-            {edu.degree}, {edu.school} {edu.endDate}, {edu.school}
-          </li>
+      <section className="mb-4">
+        <h2 className="text-xl font-semibold border-b border-gray-400 mb-2">
+          Education
+        </h2>
+        {data.education.map((edu, idx) => (
+          <div key={idx} className="mb-3">
+            <h3 className="font-bold">
+              {edu.degree} - {edu.school}
+            </h3>
+            <p className="text-sm italic">
+              {edu.startDate} - {edu.endDate}
+            </p>
+            <p>{edu.institution}</p>
+          </div>
         ))}
-      </ul>
+      </section>
 
-      <h2 className="mt-4 font-semibold">Skills</h2>
-      <p>{data.skills.join(", ")}</p>
+      <section>
+        <h2 className="text-xl font-semibold border-b border-gray-400 mb-2">
+          Skills
+        </h2>
+        <p>{data.skills.join(", ")}</p>
+      </section>
     </div>
   );
 }
