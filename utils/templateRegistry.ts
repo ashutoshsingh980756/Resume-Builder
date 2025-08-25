@@ -1,7 +1,7 @@
 // utils/templateRegistry.ts
-import ClassicTemplate from "@/components/templates/ClassicTemplate";
-import ModernTemplate from "@/components/templates/ModernTemplate";
-import CreativeTemplate from "@/components/templates/CreativeTemplate";
+import ClassicTemplate from "@/components/resume/templates/ClassicTemplate";
+import ModernTemplate from "@/components/resume/templates/ModernTemplate";
+import CreativeTemplate from "@/components/resume/templates/CreativeTemplate";
 
 // map templateId → component
 export const templateRegistry = {
