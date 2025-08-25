@@ -43,6 +43,7 @@ export default function CreativeTemplate({ data }: { data: Resume }) {
                 {edu.startDate} - {edu.endDate}
               </p>
               <p>{edu.institution}</p>
+              <p>{edu.description}</p>
             </div>
           ))}
         </section>
