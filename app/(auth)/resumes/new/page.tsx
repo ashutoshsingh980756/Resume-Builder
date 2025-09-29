@@ -2,11 +2,9 @@
 
 import { Suspense } from "react";
 import PageWrapper from "./pageWrapper";
+import Loading from "./loading";
 
 export default function NewResume() {
-  function Loading() {
-    return <h1>Loading...</h1>;
-  }
 
   return (
     <div className="p-6">

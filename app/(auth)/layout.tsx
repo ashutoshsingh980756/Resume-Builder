@@ -5,6 +5,7 @@ import "../../styles/globals.css";
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
+
     <html lang="en">
       <body>
         <Header />
@@ -12,5 +13,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
         <Footer />
       </body>
     </html>
+
+
   );
 }
