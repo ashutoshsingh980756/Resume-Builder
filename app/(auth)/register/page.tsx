@@ -1,14 +1,14 @@
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+// import { useForm } from "react-hook-form";
+// import { z } from "zod";
+// import { zodResolver } from "@hookform/resolvers/zod";
 
 // Zod schema for validation
-const loginSchema = z.object({
-  email: z.string().email("Invalid email address"),
-  password: z.string().min(6, "Password must be at least 6 characters"),
-});
+// const loginSchema = z.object({
+//   email: z.string().email("Invalid email address"),
+//   password: z.string().min(6, "Password must be at least 6 characters"),
+// });
 
-type LoginFormData = z.infer<typeof loginSchema>;
+// type LoginFormData = z.infer<typeof loginSchema>;
 
 export default function RegisterPage() {
   return (
@@ -113,7 +113,10 @@ export default function RegisterPage() {
         {/* Login Link */}
         <p className="mt-6 text-center text-sm text-gray-600">
           Already have an account?{" "}
-          <a href="/login" className="font-semibold text-blue-600 hover:underline">
+          <a
+            href="/login"
+            className="font-semibold text-blue-600 hover:underline"
+          >
             Login
           </a>
         </p>
