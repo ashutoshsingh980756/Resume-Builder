@@ -24,6 +24,6 @@ export type Education = {
   institution: string;
   startDate: string;
   endDate: string;
-  description?: string;
   school: string;
+  description?: string;
 };
