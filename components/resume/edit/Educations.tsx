@@ -1,5 +1,6 @@
-// import { Plus, Trash2 } from "lucide-react";
+import { Plus, Trash2 } from "lucide-react";
 import { Education, Resume } from "@/types/resume";
+import { inputClass } from "../ResumeEditor";
 
 export default function Educations({
   education,
@@ -34,62 +35,78 @@ export default function Educations({
       "education",
       education.filter((_, idx) => idx !== i)
     );
+
   return (
-    <div className="space-y-2">
-      <h3 className="font-medium">Education</h3>
-      <button
-        type="button"
-        className="text-sm px-3 py-1 border rounded cursor-pointer"
-        onClick={addEducation}
-      >
-        + Add
-      </button>
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <h3 className="text-sm font-semibold text-gray-700">Education</h3>
+        <button
+          type="button"
+          className="inline-flex items-center gap-1 text-xs font-medium text-gray-600 hover:text-gray-900 border border-gray-300 rounded-lg px-2.5 py-1 cursor-pointer transition-colors"
+          onClick={addEducation}
+        >
+          <Plus size={13} /> Add
+        </button>
+      </div>
+
       {education.map((edu, i) => (
-        <div key={i} className="border rounded p-3 grid grid-cols-2 gap-2">
+        <div
+          key={i}
+          className="border border-gray-200 rounded-xl p-4 space-y-3 bg-gray-50/60"
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <input
+              className={inputClass}
+              placeholder="Degree"
+              value={edu.degree}
+              onChange={(e) => updateEducation(i, "degree", e.target.value)}
+            />
+            <input
+              className={inputClass}
+              placeholder="Institution"
+              value={edu.institution}
+              onChange={(e) =>
+                updateEducation(i, "institution", e.target.value)
+              }
+            />
+            <input
+              className={inputClass}
+              placeholder="Start date"
+              value={edu.startDate}
+              onChange={(e) => updateEducation(i, "startDate", e.target.value)}
+            />
+            <input
+              className={inputClass}
+              placeholder="End date"
+              value={edu.endDate}
+              onChange={(e) => updateEducation(i, "endDate", e.target.value)}
+            />
+          </div>
+
           <input
-            className="border p-2 rounded"
-            placeholder="Degree"
-            value={edu.degree}
-            onChange={(e) => updateEducation(i, "degree", e.target.value)}
-          />
-          <input
-            className="border p-2 rounded"
-            placeholder="institution"
-            value={edu.institution}
-            onChange={(e) => updateEducation(i, "institution", e.target.value)}
-          />
-          <input
-            className="border p-2 rounded"
-            placeholder="Start"
-            value={edu.startDate}
-            onChange={(e) => updateEducation(i, "startDate", e.target.value)}
-          />
-          <input
-            className="border p-2 rounded"
-            placeholder="End"
-            value={edu.endDate}
-            onChange={(e) => updateEducation(i, "endDate", e.target.value)}
-          />
-          <input
-            className="border p-2 rounded"
+            className={inputClass}
             placeholder="School"
             value={edu.school}
             onChange={(e) => updateEducation(i, "school", e.target.value)}
           />
+
           <textarea
-            className="border p-2 rounded col-span-2"
+            className={inputClass}
             rows={3}
-            placeholder="Description"
+            placeholder="Description (optional)"
             value={edu.description}
-            onChange={(e) => updateEducation(i, "description", e.target.value)}
+            onChange={(e) =>
+              updateEducation(i, "description", e.target.value)
+            }
           />
-          <div className="col-span-2 text-right">
+
+          <div className="text-right">
             <button
               type="button"
-              className="text-xs text-red-600 cursor-pointer"
+              className="inline-flex items-center gap-1 text-xs text-red-500 hover:text-red-600 cursor-pointer transition-colors"
               onClick={() => removeEducation(i)}
             >
-              Remove
+              <Trash2 size={13} /> Remove
             </button>
           </div>
         </div>
